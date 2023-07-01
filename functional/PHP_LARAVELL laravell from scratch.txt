@@ -1,0 +1,81 @@
+https://www.youtube.com/watch?v=MYyJ4PuL4pY&t=387s
+Видео-курс
+
+В Закладках после 19/06/23 - информация по установке composer && laravell valet
+
+В папке с проектом
+
+(Перед запуском проекта обязательно убедиться что не 14 версия ноды)
+
+composer global require laravel/installer
+laravel new PROJECT_NAME
+
+valet park
+
+
+
+
+
+
+brew install mysql
+
+mysql.server start - запуск mysql server
+
+mysql -u root - подключаемся к руту
+
+
+
+CREATE USER 'brad'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON * . * TO 'brad'@'localhost';
+FLUSH PRIVILEGES;
+
+exit
+
+mysql -u brad -p
+(password)
+
+CREATE DATABASE laragigs;
+
+
+
+
+
+
+(In project folder - terminal)
+
+php artisan make:migration create_listings_table 
+
+(After editing the create_listings_table) php artisan migrate  
+
+=> then in mysql brad user (use laragigs, SHOW TABLES;)
+
+
+
+(После раскомментирования databaseSeeder.php)
+
+php artisan db:seed 
+
+
+php artisan migrate:refresh (убираем пользователей обратно)
+php artisan migrate:refresh --seed (обвонляем и seed)
+
+
+
+php artisan make:model Listing
+
+
+
+
+
+Optional (create factory)
+php artisan make:factory ListingFactory
+
+
+
+
+
+php artisan make:controller ListingController  
+
+
+
+1:53:00 - STOPED
