@@ -1,0 +1,27 @@
+Examples 1, 2
+
+Показывают каким образом мы можем разделять связанные списки и как можно ошибиться
+Если сделать некорректную отсылку на объекты
+
+https://learn.javascript.ru/recursion - подробнее
+
+Еще один пример - связанный со связанными списками - ниже
+
+function sum(a){
+    sum.count += a;
+	return sum;
+}
+
+sum.count = 0;
+
+sum.toString = function(){
+	let count = sum.count;
+	sum.count = 0;
+	return count;
+}
+
+alert( sum(1)(2) ); // 3
+alert( sum(5)(-1)(2) ); // 6
+alert( sum(6)(-1)(-2)(-3) ); // 0
+alert( sum(0)(1)(2)(3)(4)(5) ); // 15
+
