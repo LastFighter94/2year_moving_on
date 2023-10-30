@@ -1,0 +1,17 @@
+https://www.youtube.com/watch?v=thHPEotZVdA&list=PL4cUxeGkcC9haQlqdCQyYmL_27TesCGPC&index=2
+
+Nix nuxi init nuxt-app 
+(Init next app)
+
+Npm I 
+
+Npm install --save-dev @nuxtjs/tailwindcss
+
+Модули, которые мы добавляем в приложение мы прописываем в nuxt.config.ts
+
+
+
+// assets/css/tailwind.css добавили потом уже - без этого тоже работал tailwind
+
+rebelu94xpa 
+currencyapi
