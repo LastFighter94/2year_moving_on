@@ -1,0 +1,33 @@
+@import url('./Globals/Colors.scss');
+
+@import url('./Modificators/Paddings.scss');
+@import url('./Modificators/Margins.scss');
+@import url('./Modificators/BgColor.scss');
+
+// существует костыльный способ по подключение $vars (все импорты в этом файле, остается просто
+// подключать его к стилям - модульным и не только)
+// @import './Imports'; - делать это необязательно
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  //background-color: $lightColor;
+  background-color: var(--light-color);
+  //google fonts - link in index.html
+  font-family: 'Lato', sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  //color: $darkColor;
+  color: var(--dark-color);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
