@@ -1,0 +1,25 @@
+https://www.youtube.com/watch?v=To5XzHlTS_E
+
+npm create vue@3
+npm i
+vue add vuetify - choose vite
+
+
+
+
+
+
+
++ TS
+
+npm init vite@latest my-app -- --template vue-ts
+npm i
+vue add vuetify - choose vite
+
+npm install -D @types/node
+npm i -D sass
+npm i axios js-cookie js-md5 vue-router vuex
+
+https://dev.to/tilly/aliasing-in-vite-w-typescript-1lfo 
+
+npm i @vueuse/components

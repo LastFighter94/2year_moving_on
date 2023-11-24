@@ -1,0 +1,3 @@
+Файл logger js
+
+Npm I uuid

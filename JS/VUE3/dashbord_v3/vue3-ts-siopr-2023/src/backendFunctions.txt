@@ -1,0 +1,11 @@
+Образец поиска функций - добавляем следующую строчку к строкам ниже
+" - вызов"
+" - сама функция"
+
+- используются в инициализации меню
+todo *** Backend function - addMenuKeys
+todo *** Backend function - preprocess
+
+- используются при обновлении страницы и при переходе из поиска в компоненте HeaderSearchBar
+todo *** Backend function - setInitialBreadCrumbs
+todo *** Backend function - updateActiveItems

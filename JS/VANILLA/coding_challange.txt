@@ -1,0 +1,12 @@
+https://github.com/iamshaunjp/Coding-Challenges - original
+
+https://www.youtube.com/watch?v=4vefIayqwZw&list=PL4cUxeGkcC9hhNl8shRf6TIL-dNkpSRV0 - YouTube
+
+1 - slide in menu
+2 - live input feedback (галочки on veryfied)
+3 - toggle switch (custom bootstrap)
+4 - css only tabs
+5 - lore Epsom flavour function (useless js script)
+6 - closed password field (svg img)
+7 - scrolling words animation (animation css)
+8 - flash cards (animationn css)

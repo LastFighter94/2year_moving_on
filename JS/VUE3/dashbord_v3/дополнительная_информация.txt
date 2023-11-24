@@ -1,0 +1,10 @@
+# МИГРАЦИЯ С ПЛАГИНОМ ПОЗВОЛЯЮЩИМ ПОДДЕРЖИВАТЬ VUE 2 КОД - для плавного перехода на VUE 3
+
+https://v3.ru.vuejs.org/ru/guide/migration/migration-build.html#установка
+https://www.vuemastery.com/blog/vue-3-migration-build/
+https://habr.com/ru/articles/570184/
+
+https://github.com/vuejs/core/tree/main/packages/vue-compat
+https://www.npmjs.com/package/@vue/compat
+
+https://www.youtube.com/watch?v=HdrYEECqA1Q - from vue-cli to vite

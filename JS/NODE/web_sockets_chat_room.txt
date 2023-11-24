@@ -1,0 +1,9 @@
+https://www.youtube.com/watch?v=RL_E56NPSN0
+
+Npm init -y
+Npm I ws
+Npm I express
+
+v18.16.0
+
+toString преобразовали buffer - иначе не работало - в tutorial такого не было
