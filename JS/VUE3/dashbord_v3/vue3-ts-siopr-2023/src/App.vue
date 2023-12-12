@@ -36,9 +36,9 @@ import {API, defaultRequestParams} from "@/services/API.ts";
 
 const route = useRoute()
 
-watch(
-    () => route.params.id || route.query.variant,
-    () => {
+// watch(
+//     () => route.params.id || route.query.variant,
+//     () => {
         store.dispatch('layoutModule/setMenuData').then(() => {
             // todo *** Backend function - setInitialBreadCrumbs - вызов
             store.commit('layoutModule/setInitialBreadCrumbs', {routeId: route.params.id, title: route.query.title})
@@ -48,8 +48,8 @@ watch(
         })
 
         store.commit('layoutModule/setPageName', route.query.title)
-    }
-)
+//     }
+// )
 
 </script>
 

@@ -1,0 +1,10 @@
+@value v-primary: #acacac;
+
+.button {
+    background: v-primary;
+    padding: 20px;
+
+    span {
+        color: #04ac04;
+    }
+}

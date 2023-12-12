@@ -1,0 +1,141 @@
+56:51 - время ролика
+
+import path from 'path';
+import webpack from 'webpack';
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
+import {VueLoaderPlugin} from "vue-loader";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+
+// Прежде чем сделать из module.exports функцию с аргументом env и возвратом данных в виде объекта config ( return {...} ),
+// module.exports был просто объектом config.
+// module.exports = {...}
+
+type Mode = 'production' | 'development';
+interface EnvVariables {
+    mode: Mode,
+    port: number
+}
+
+export default (env: EnvVariables) => {
+    const isDev = env.mode === 'development';
+    const isProd = env.mode === 'production';
+
+    // module.exports = (env: any) => {
+    const config: webpack.Configuration =  {
+        // ***********************************
+        // mode
+
+        // в каком формате происходит сборка - development - production
+        mode: env.mode ?? 'development',
+        // mode: 'development', // расширенный код с различными примечаниями и подробностями - может пригодиться только на этапе разработки
+
+        // ***********************************
+        // entry
+
+        // путь к точке входа в наше приложение
+        // лучше сразу использовать стандартный модуль path - чтобы более корректно обрабатывать все эти пути на разных ОС
+        entry: path.resolve(__dirname, 'src', 'index.tsx'), // __dirname = текущая dir, плюс src/index.js
+
+        // можно делать несколько точек сборок, например
+        // вместо index.js можно брать другие входные данные
+        // entry: {
+        //     helloWorld: path.resolve(__dirname, 'src', 'index.js'),
+        //     helloWorldTwo: path.resolve(__dirname, 'src', 'index.js'),
+        //     helloWorldThree: path.resolve(__dirname, 'src', 'index2.js')
+        // },
+
+        // ***********************************
+        // source maps
+        devtool: isDev && 'inline-source-map',
+
+        // ***********************************
+        // output
+
+        // конфигурация того и как сборка у вас будет происходить
+        output: {
+            // https://stackoverflow.com/questions/42148632/conflict-multiple-assets-emit-to-the-same-filename
+            // filename: '[name].js',
+            // path: __dirname + '/build',
+            // chunkFilename: '[id].[chunkhash].js',
+
+            path: path.resolve(__dirname, 'build'),
+            filename: '[name].[contenthash].js', // делаем динамическое название нашего bundle
+            clean: true // этот флаг нужен для того чтобы при изменении названия имени файла build,
+            // другие файлы в папке - у которых имена не совпадают автоматически удалялись
+
+            // PS: у статичного filename есть проблемы - браузер будет эти файлы кэшировать
+            // и если вы какие-то изменения будите вносить - браузер к сожалению будет доставать их из кэша
+        },
+
+        // ***********************************
+        // plugins
+
+        // plugins - array of plugins
+        plugins: [
+            new HtmlWebpackPlugin({
+                template: path.resolve(__dirname, 'public', 'index.html')
+            }),
+            // в объект HtmlWebpackPlugin мы передаем параметры
+            // основной параметр template - ссылка до нашего html файла, который будет использоваться в качестве шаблона
+
+            isDev && new webpack.ProgressPlugin(), // процент сборки в терминале
+
+            new VueLoaderPlugin(),
+            isProd && new MiniCssExtractPlugin({
+                filename: 'css/[name].[contenthash:8].css',
+                chunkFilename: 'css/[name].[contenthash:8].css'
+            })
+        ].filter(Boolean),
+
+        module: {
+            rules: [
+                {
+                    // ts-loader умеет работать с JSX
+                    // Если бы мы не использовали type script: нужен был бы babel-loader
+                    test: /\.tsx?$/, // regular для обработки ts & tsx
+                    use: 'ts-loader', // название loader
+                    exclude: /node_modules/, // то что не обрабатываем
+                },
+
+                // ЭКСПЕРИМЕНТ!
+
+                {
+                    test: /\.vue$/,
+                    loader: 'vue-loader'
+                },
+                // this will apply to both plain `.js` files
+                // AND `<script>` blocks in `.vue` files
+                {
+                    test: /\.js$/,
+                    loader: 'babel-loader'
+                },
+                // this will apply to both plain `.css` files
+                // AND `<style>` blocks in `.vue` files
+                {
+                    test: /\.s[ac]ss$/i,
+                    use: [
+                        // Creates `style` nodes from JS strings
+                        // "style-loader",
+                        isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+                        // Translates CSS into CommonJS
+                        "css-loader",
+                        // Compiles Sass to CSS
+                        "sass-loader",
+                    ],
+                },
+            ],
+        },
+        resolve: {
+            extensions: ['.tsx', '.ts', '.js'], // для того чтобы при import не надо было писать .tsx || .ts
+            // обработка и проверка идет по порядку в массиве выше (понимание - идет импорт файлов с исходным кодом)
+        },
+
+        devServer: isDev ? {
+            port: env.port ?? 3000,
+            open: true
+        } : undefined
+    }
+
+    return config
+};
