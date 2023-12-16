@@ -1,0 +1,40 @@
+https://amorgunov.com/posts/2020-08-03-create-own-virtual-dom/
+
+На моменте
+
+Состояние #
+
+Ошибка в статье
+
+const state = { count: 0 };
+const app = document.getElementById("app");
+
+let renderTemplate = mount(createDOMNode(createVApp(state)), app);
+
+setInterval(() => {
+    state.count++;
+
+    renderTemplate = mount(createDOMNode(createVApp(state)), renderTemplate);
+}, 1000);
+
+Код ниже сработает вместо
+
+const state = { count: 0 };
+const app = document.getElementById("app");
+
+mount(createDOMNode(createVApp(state)), app);
+
+setInterval(() => {
+  state.count++;
+  mount(createDOMNode(createVApp(state)), app);
+}, 1000);
+
+#######################################################
+#######################################################
+
+Браузер перерисовывает все элементы, несмотря на то, что часть из них не меняется.
+
+Для решения проблемы нам нужно не полностью заменять ноду, а обновлять (патчить) ее атрибуты и детей. Сделать это можно как раз с помощью виртуальных элементов - сравнив два элемента, можно найти отличия и точечно сделать изменения в реальном DOM.
+
+Stoped at this moment
+--> patch(vNode, node) #

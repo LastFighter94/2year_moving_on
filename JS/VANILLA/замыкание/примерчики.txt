@@ -1,0 +1,66 @@
+let goodLoveDeeds = ['soul talking', 'respect', 'sex', 'good time together', 'good solutions', 'man rules']
+
+function lovePercentage(startPercantage){
+    if (startPercantage < 50) return 
+    
+    let currectLovePercentage = startPercantage
+    let kpd = 1
+    return function(loveDeed) {
+        if (goodLoveDeeds.includes(loveDeed)){
+            kpd -= 0.1
+            currectLovePercentage += (10 * kpd)
+        } else {
+            kpd += 0.1
+            currectLovePercentage -= (15 * kpd)
+        }
+        return currectLovePercentage
+    }
+}
+
+const loveQuality = lovePercentage(51)
+loveQuality('sex')
+loveQuality('sex')
+loveQuality('sex')
+
+#################################################
+
+function createAdder(a) {
+  return function add(b) {
+    const sum = a + b;
+    return sum;
+  }
+}
+const addTo2 = createAdder(2);
+addTo2(5); // 7
+
+*** *** *** *** *** *** *** 
+ТОЖЕ САМОЕ ЧТО ВВЕРХУ - КЛАССОМ
+*** *** *** *** *** *** *** 
+
+class Adder {
+  constructor(a) {
+     this.a = a;
+  }
+
+  add(b) {
+    const sum = this.a + b;
+    return sum;
+  }
+}
+const addTo2 = new Adder(2);
+addTo2.add(5); // 7
+
+#################################################
+
+var createCounter = function(n) {
+  let currentCount = n - 1;
+  return function() {
+    currentCount += 1;
+    return currentCount;      
+  };
+};
+
+const counter = createCounter(10)
+counter() // 10
+counter() // 11
+counter() // 12
