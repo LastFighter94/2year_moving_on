@@ -1,0 +1,12 @@
+https://www.youtube.com/watch?v=sXT5DkeZnrA&list=PLPSVqD9sgsVQg-LAWx15X3sB38nSAjAoG&index=2
+
+	<script>
+        let styleDebug = "color: black; background-color: yellow; border-radius: 5px; padding: 0.5rem"
+        const bugLog = (string) => {
+            return console.log("%c" + string, styleDebug)
+        }
+
+        bugLog('test string')
+
+        console.log("%cTEST STRING%c test string two", styleDebug, '')
+    	</script>
