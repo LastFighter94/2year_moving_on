@@ -14,6 +14,18 @@
 <!--            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>-->
 
             <router-view/>
+
+<!--            if no relative parent class exists -->
+
+<!--            <div style="position: relative;">-->
+<!--                <CustomSelect-->
+<!--                    :position="{top: '48px', width: '332px'}"-->
+<!--                    :logicScope="'HeaderSearchBar'"-->
+<!--                    :values="values"-->
+<!--                    @closeSelect="() => values = []"-->
+<!--                    v-on-click-outside="() => values = []"-->
+<!--                />-->
+<!--            </div>-->
         </section>
 
         <Footer/>
@@ -27,14 +39,24 @@ import Header from "@/layout/Header.vue";
 import Footer from "@/layout/Footer.vue";
 import Menu from "@/layout/Menu.vue";
 import BreadCrumbs from "@/layout/BreadCrumbs.vue";
+import { vOnClickOutside } from '@vueuse/components' // импорт может гореть серым, потому что он используется как директива на компоненты
+
 
 import store from "@/store";
 
-import {watch} from "vue";
+import {ref, watch} from "vue";
 import {useRoute} from "vue-router";
 import {API, defaultRequestParams} from "@/services/API.ts";
+import CustomSelect from "@/UI/CustomSelect/Index.vue";
 
 const route = useRoute()
+
+const values = ref([
+    {title: 'test 1'},
+    {title: 'test 2'},
+    {title: 'test 3'},
+    {title: 'test 4'},
+])
 
 // watch(
 //     () => route.params.id || route.query.variant,

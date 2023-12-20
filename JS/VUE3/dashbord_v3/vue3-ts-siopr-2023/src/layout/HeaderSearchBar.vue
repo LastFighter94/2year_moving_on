@@ -28,7 +28,7 @@
 <script lang="ts" setup>
 import CustomSelect from "@/UI/CustomSelect/Index.vue";
 import {ref} from "vue";
-import { vOnClickOutside } from '@vueuse/components' // импорт может гореть серым, потому что он используется как директива на компонеты
+import { vOnClickOutside } from '@vueuse/components' // импорт может гореть серым, потому что он используется как директива на компоненты
 import store from "@/store";
 
 let showSearchBar = ref(false)
