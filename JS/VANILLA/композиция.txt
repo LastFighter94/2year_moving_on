@@ -3,3 +3,6 @@ https://www.youtube.com/watch?v=xS9FicVrOTI
 
 Репозиторий
 https://github.com/HowProgrammingWorks/Composition
+
+Пример композиции на решенной задачи leet code - кэширование
+https://www.youtube.com/watch?v=hHdNfPOQjrg

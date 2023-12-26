@@ -7,6 +7,7 @@ console.log(1)
 new Promise(resolve => {
     console.log('Promise')
     setTimeout(() => {
+        console.log(777)
         resolve()
     }, 0)
 }).then(() => {
@@ -15,7 +16,7 @@ new Promise(resolve => {
     console.log('then 2')
 })
 
-console.log('55')
+console.log('4')
 
 setTimeout(() => {
     console.log('timeout2')

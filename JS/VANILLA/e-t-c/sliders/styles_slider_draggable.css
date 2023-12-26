@@ -1,0 +1,53 @@
+
+ul {
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+
+main {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 50px 0;
+}
+
+.wrapper {
+	position: relative;
+}
+
+.items {
+	position: relative;
+	width: 600px;
+	overflow: hidden;
+	white-space: nowrap;
+	font-size: 0;
+	cursor: pointer;
+    display: flex;
+}
+
+.items.active {
+    cursor: grab;
+}
+
+.item {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	margin: 10px;
+	user-select: none;
+	background: tomato;
+	min-width: 100px;
+    max-width: 100px;
+	height: 130px;
+	color: 'red';
+	font-size: 33px;
+	font-weight: bold;
+	line-height: 130px;
+}
+
+.item:last-child {
+    margin-right: 20px;
+}

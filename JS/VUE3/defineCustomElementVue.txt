@@ -1,0 +1,30 @@
+https://www.youtube.com/watch?v=SoPo7bnhbqA
+
+npm init vue@latest .
+
+  define: {
+    'process': {
+      env: 0
+    }
+  },
+
+  plugins: [
+    vueJsx(),
+    vue({ customElement: true })
+  ],
+
+Добавили в vite.config.ts и все заработало
+
+uncaught referenceerror: process is not defined - победили ошибку
+
+1) следуем инструкциям в видео
+2) пример widget - папка
+3) vite.config.ts редактируем как на видео + добавляем изменения выше
+4) indexToTestCustomElement.html - пример как подключить build 
+5) запускаем life-server на банальном vs-code и все работает (кладем файлы из build туда же куда и indexToTestCustomElement.html)
+
+
+
+###
+
+https://habr.com/ru/articles/581954/ - из этой статьи life hacks, которые все зарезали - выше

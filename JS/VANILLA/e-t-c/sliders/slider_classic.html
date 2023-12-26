@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./slider_classic.css">
+</head>
+<body>
+    <div style="display: flex;">
+        <button type="button" id="prevBtn" class="btn" oncanplay="prev()">Prev</button>
+
+        <div class="slider-container">
+            <div class="slider-width" id="slider-width">
+                <div class="item" id="item1">1</div>
+                <div class="item" id="item2">2</div>
+                <div class="item" id="item3">3</div>
+                <div class="item" id="item4">4</div>
+                <div class="item" id="item5">5</div>
+                <div class="item" id="item6">6</div>
+                <div class="item" id="item7">7</div>
+                <div class="item" id="item8">8</div>
+                <div class="item" id="item9">9</div>
+                <div class="item" id="item10">10</div>
+                <div class="item" id="item11">11</div>
+                <div class="item" id="item12">12</div>
+                <div class="item" id="item13">13</div>
+                <div class="item" id="item14">14</div>
+                <div class="item" id="item15">15</div>
+            </div>
+        </div>
+
+        <button type="button" id="nextBtn" class="btn" oncanplay="next()">Next</button>
+    </div>
+
+    <script>
+        let count = 0
+
+        let sliderWidth = document.getElementById('slider-width')
+        let prevBtn = document.getElementById('prevBtn')
+        let nextBtn = document.getElementById('nextBtn')
+
+        let itemsMaxLeft
+        let itemWidth = 320
+
+        const secondMethodFunc = () => {
+            let items = document.querySelectorAll('.item')
+
+            items.forEach((i, index) => {
+                i.style.left = index * itemWidth + 'px'
+                if (index === items.length - 1) itemsMaxLeft = index * itemWidth
+            })
+        }
+
+        secondMethodFunc()
+
+        const thirdMethod = (action) => {
+            let items = document.querySelectorAll('.item')
+
+            items.forEach(i => {
+                let leftStyle = i.style.left.split('px')[0]
+
+                if (action === 'next'){
+                    if (+leftStyle === 0) i.style.left = itemsMaxLeft + 'px'
+                    else i.style.left = +leftStyle - itemWidth + 'px'
+                }
+
+                if (action === 'prev'){
+                    if (+leftStyle === itemsMaxLeft) i.style.left = 0 + 'px'
+                    else i.style.left = +leftStyle + itemWidth + 'px'
+                }
+            })
+        }
+
+        prevBtn.addEventListener('click', () => {
+            // if (count === 0) return
+            // count++
+            // doSlide()
+
+            // prev() // можно без анимации - убираем функцию ниже и делаем first method в стилях
+            // secondMethodFunc()
+
+            thirdMethod('prev')
+        })
+
+        nextBtn.addEventListener('click', () => {
+            // if (count === -12) return
+            // count--
+            // doSlide()
+
+            // next() // можно без анимации - убираем функцию ниже и делаем first method в стилях
+            // secondMethodFunc()
+
+            thirdMethod('next')
+        })
+
+        const doSlide = () => {
+            let leftPosition = count * itemWidth + 'px'
+            sliderWidth.style.left = leftPosition
+ 
+        }
+
+        const next = () => sliderWidth.append(document.querySelectorAll('.item')[0])
+        const prev = () => sliderWidth.prepend(document.querySelectorAll('.item')[14])
+
+        console.log(screen.width);
+
+        console.log(window.innerWidth)
+    </script>
+</body>
+</html>
