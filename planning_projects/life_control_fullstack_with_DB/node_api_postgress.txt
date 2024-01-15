@@ -1,0 +1,22 @@
+npm init -y
+
+npm i express pg
+
+(Pg - модуль для работы с Postgress)
+
+npm i -D nodemon (for server watching)
+
+
+
+Сущности для записей в БД
+
+Id Serial (уникальный авто инкремент)
+Date: дата
+habbitType: сигареты, кальян, пиво, писки, YouTube, instagram, наркотики, порнография, спортзал, йога-утро, йога-вечер, массаж, мастурбация, секс VARCHAR
+Quantity: INT
+
+npm i cors
+
+Npm I multer (не помог)
+
+npm i express-fileupload

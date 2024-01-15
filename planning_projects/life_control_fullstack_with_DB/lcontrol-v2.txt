@@ -1,0 +1,9 @@
+Vue create .
+
+Babel, router, vuex
+
+(No linter)
+
+Npm I axios
+
+Vue 2
