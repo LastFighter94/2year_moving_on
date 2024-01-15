@@ -1,0 +1,11 @@
+1 =
+Script setup syntax (syntactic sugar)
+NO TS
+
+2 =
+Script setup syntax (syntactic sugar)
+TS
+
+3 =
+Setup syntax
+NO TS

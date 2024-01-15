@@ -1,0 +1,2 @@
+// https://www.youtube.com/watch?v=JbhI9J6slcA&list=PLXDouhCU5r6ov5FqXsX_emWJTpBQjprn8&index=7 - подробнее об inherit attrs
+// https://www.youtube.com/watch?v=1wabUBDTERg&list=PLXDouhCU5r6ov5FqXsX_emWJTpBQjprn8&index=30 - script inside script setup (evaluate only once Method)

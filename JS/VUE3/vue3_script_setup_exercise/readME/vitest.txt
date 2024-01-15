@@ -1,0 +1,10 @@
+npm i -D vitest
+npm i -D @vue/test-utils
+npm i -D jsdom
+
+add code below into vite.config.ts
+
+test:{
+    globals:true,
+    environment: 'jsdom',
+}

@@ -1,0 +1,75 @@
+// basics - https://vuejs.org/api/sfc-script-setup.html
+
+Сделать учебный материал более наглядный, чтобы самому было потом приятно его использовать (и удобно)
+
+1_part
+
+Refs
+    https://vuejsdevelopers.com/2022/06/01/ref-vs-reactive/
+Props
+Emits
+
+2_part
+
+conditional rendering
+conditional style bindings
+v-for
+v-show
+v-if
+v-model
+    https://vuejs.org/guide/components/v-model.html (для компонентов - один из примеров в 6_part defineModel)
+computed
+
+3_part
+
+hooks
+    https://vuejs.org/api/composition-api-lifecycle
+created
+mounted
+before destroy (before unmount - equal)
+keep alive
+    https://www.youtube.com/watch?v=kHAgdBXEz6E - options API
+    https://www.youtube.com/watch?v=OiemxQnFXNg - composition API - пример из видео не работает, но в коде части есть рабочий пример (defineOptions)!
+остальные (в том числе onErrorCaptured) (https://www.youtube.com/watch?v=uwvqaQV9dK0)
+default props (на примере синей рамки в ChildWrapper), props-validation (ChildWrapper)
+namedSpacedComponents
+
+4_part
+
+define expose
+    https://www.youtube.com/watch?v=tqoeAAH21Y4
+- define options ?
+$attrs
+slots
+
+5_part
+watch
+
+6_part
+composable functions (альтернатива mixins)
+suspense (<Suspense> is an experimental feature and its API will likely change.)
+    https://www.youtube.com/watch?v=zbXREIYNZHE
+defineAsyncComponent
+custom directives (main.ts)
+    https://www.youtube.com/watch?v=ErUfigmqB3g
+teleport
+    https://www.youtube.com/watch?v=m1isMr_kB7Q
+    https://www.youtube.com/watch?v=vPuOsUsklRs
+defineModel
+    https://www.youtube.com/watch?v=6xhF9HCTf9s&t=89s
+
+7_part
+
+- $router
+- $state
+- inject, provide
+- nextTick
+    https://www.youtube.com/watch?v=Y_c4s8jvo5s
+
+MOMENTS:
+
+как регистрировать vue компоненты глобально? (script setup, composition API syntax) (https://vuejs.org/guide/components/registration)
+
+1) https://stackoverflow.com/questions/67669820/how-to-define-component-name-in-vue3-setup-tag
+2) https://stackoverflow.com/questions/67445608/how-to-define-name-and-inheritattrs-in-script-setup
+name компонента (4_part - PartFourChild - также есть ответ)
