@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        #app {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            background-image: linear-gradient(to bottom right, #0093E9, #6DFC6B);
+        }
+
+        .div-element {
+            background-color: #ffffff;
+            border: 3px black solid;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            display: flex;
+            height: 100px;
+            width: 200px;
+        }
+
+        .active {
+            border-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        const $ = document
+        const app = $.getElementById('app')
+
+        const [numElements, lastElementId, firstElementId] = [33, 33, 1]
+        let activeElementID = 1
+
+        const data = []
+
+        const createDivElement = (divContent, divIndex) => {
+            const divElement = $.createElement('div')
+            divElement.className = 'div-element'
+            divElement.innerHTML = divContent
+            divElement.id = divContent
+
+            if (divIndex === firstElementId) divElement.classList.add('active')
+            return divElement
+        }
+
+        for (let i = 1; i <= numElements; i++){
+            const elementId = `elem${i}`
+            app.appendChild(createDivElement(elementId, i))
+            data.push(elementId)
+        }
+
+        $.addEventListener('keydown', (e => {
+            if (e.key === 'ArrowDown'){
+                if (activeElementID === lastElementId) return
+                activeElementID += 1
+                $.getElementById(`elem${activeElementID - 1}`).classList.remove('active')
+                $.getElementById(`elem${activeElementID}`).classList.add('active')
+            }
+
+            if (e.key === 'ArrowUp'){
+                if (activeElementID === firstElementId) return
+                $.getElementById(`elem${activeElementID}`).classList.remove('active')
+                activeElementID -= 1
+                $.getElementById(`elem${activeElementID}`).classList.add('active')
+            }
+
+            if (['ArrowDown', 'ArrowUp'].includes(e.key)){
+                $.getElementById(`elem${activeElementID}`).scrollIntoViewIfNeeded(false)
+                e.preventDefault()
+            }
+        }))
+    </script>
+</body>
+</html>
