@@ -1,21 +1,35 @@
+LARAVEL это model view controller FRAMEWORK
+
+Model - дата которую мы можем представлять с помощью любой СУБД
+View - то что пользователь видит в HTML, template короче (blade шаблонизатор)
+Controller (router) - позволяет пользователю безопасно взаимодействовать с моделью
+
 https://www.youtube.com/watch?v=MYyJ4PuL4pY&t=387s
 Видео-курс
 
 В Закладках после 19/06/23 - информация по установке composer && laravell valet
 
+(Также в видео уроке на 8 минуте подробно расписано все)
+
 В папке с проектом
 
 (Перед запуском проекта обязательно убедиться что не 14 версия ноды)
 
+// глобальная установка ларавел
+// перед этим были установлены php and composer
 composer global require laravel/installer
 laravel new PROJECT_NAME
 
 valet park
 
+Обратная команда
+valet forget
 
+Проверить какие директории "припаркованы"
+valet parked
 
-
-
+******************************
+Касательно DB
 
 brew install mysql
 
@@ -36,10 +50,11 @@ mysql -u brad -p
 
 CREATE DATABASE laragigs;
 
+******************************
 
+Artisan - command line tool to create our model
 
-
-
+ORM - object relational mapping
 
 (In project folder - terminal)
 
@@ -79,3 +94,27 @@ php artisan make:controller ListingController
 
 
 1:53:00 - STOPED
+
+
+
+
+
+
+
+
+
+
+
+***********************************************
+***********************************************
+***********************************************
+
+WINDOWS WINDOWS WINDOWS WINDOWS WINDOWS WINDOWS
+
+***********************************************
+***********************************************
+***********************************************
+
+Внутри папки PHP_LARAVELL laravell from scratch есть подробный скрин, который отработал
+
+https://gist.github.com/bradtraversy/7485f928e3e8f08ee6bccbe0a681a821 - отсюда наработки взяты
