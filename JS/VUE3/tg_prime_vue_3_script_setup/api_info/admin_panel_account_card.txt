@@ -1,0 +1,44 @@
+admin_panel_account_card endpoints:
+
+GET
+
+1) GetEmail by ID
+
+string (email)
+
+2) GetData by ID (переход из account_cards родительского компонента - в route добавляем ID)
+
+[
+    // (объекты с ключами совпадающими с realKey в headers)
+    {
+        "Товар": string,
+        "Ключ продукта": string,
+        "Дата покупки": string,
+        "Дата окончания": string
+    },
+    {
+        "Товар": string,
+        "Ключ продукта": string,
+        "Дата покупки": string,
+        "Дата окончания": string
+    },
+    ...
+]
+
+В зависимости от количества аккаунтов - реализация пагинации:
+если их мало - в запрос на получение аккаунтов - подтягивать сразу все
+
+GetHeaders (какой-то опознавательный ключ в url запроса)
+
+realKey - имя поля в базе (чтобы rusTitle можно было менять как хочешь)
+
+[
+    {rusTitle: 'Список продуктов', realKey: 'Товар'},
+    {rusTitle: 'Ключ продукта', realKey: 'Ключ продукта'},
+    {rusTitle: 'Дата покупки', realKey: 'Дата покупки'},
+    {rusTitle: 'Дата окончания', realKey: 'Дата окончания'}
+]
+
+POST (body - опознание по id аккаунта и имени товара)
+
+(stopStartAction ('start' || 'stop')) || (activeStatus (true || false))

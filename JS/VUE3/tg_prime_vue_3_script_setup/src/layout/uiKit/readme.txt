@@ -1,0 +1,2 @@
+Checkbox - только там
+PersonalCabinetTableCell

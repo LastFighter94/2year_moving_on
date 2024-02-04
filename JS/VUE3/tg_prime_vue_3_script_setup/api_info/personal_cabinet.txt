@@ -1,0 +1,41 @@
+personal_cabinet endpoints:
+
+GET
+
+GetData
+
+[
+    // (объекты с ключами совпадающими с realKey в headers)
+    {
+        "Услуга": string,
+        "Ключ продукта": string,
+        "Действует до": string,
+        "Информация об авто-оплате": true || false,
+        "Информация о привязке аккаунта": true || false
+    },
+    {
+        "Услуга": string,
+        "Ключ продукта": string,
+        "Действует до": string,
+        "Информация об авто-оплате": true || false,
+        "Информация о привязке аккаунта": true || false
+    }
+    ...
+]
+
+GetHeaders (какой-то опознавательный ключ в url запроса)
+
+realKey - имя поля в базе (чтобы rusTitle можно было менять как хочешь)
+
+[
+    {rusTitle: 'Услуга', realKey: 'Услуга'},
+    {rusTitle: 'Ключ продукта', realKey: 'Ключ продукта'},
+    {rusTitle: 'Действует до', realKey: 'Действует до'},
+    {rusTitle: 'Информация об авто-оплате', realKey: 'Автооплата'},
+    {rusTitle: 'Отвязать', realKey: 'Информация о привязке аккаунта'},
+]
+
+POST (body - опознание по имени услуги, true || false)
+
+1) ChangeAutoPay
+2) Untie
