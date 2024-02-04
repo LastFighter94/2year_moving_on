@@ -1,0 +1,22 @@
+.clh-p-1 {padding: 5px}
+.clh-p-2 {padding: 10px}
+.clh-p-3 {padding: 15px}
+
+.clh-m-1 {margin: 5px}
+.clh-m-2 {margin: 10px}
+.clh-m-3 {margin: 15px}
+
+.clh-mt-1 {margin-top: 5px}
+.clh-mt-2 {margin-top: 10px}
+.clh-mt-3 {margin-top: 15px}
+
+.clh-ml-1 {margin-left: 5px}
+.clh-ml-2 {margin-left: 10px}
+.clh-ml-3 {margin-left: 15px}
+
+.clh-d-in-block {display: inline-block}
+.clh-d-block {display: block}
+
+.clh-h-fit-content {
+    height: fit-content;
+}

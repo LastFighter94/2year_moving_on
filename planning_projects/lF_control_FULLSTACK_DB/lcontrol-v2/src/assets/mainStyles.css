@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+.project-btn {
+    align-self: end;
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: #42b983;
+    color: #ffffff;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.project-btn:active {
+    transform: scale(0.98);
+}

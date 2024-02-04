@@ -1,0 +1,61 @@
+SELECT column_name, data_type FROM information_schema.columns WHERE table_schema = 'public' AND table_name = 'table_days';
+
+SELECT columntablekey, columntitle, type FROM xx_form_fields where form_id = '1';
+
+select columntablekey, columntitle FROM xx_form_fields xff  where form_id = '1'
+
+ALTER TABLE xx_form_fields ADD PRIMARY KEY(id)
+
+-- сделать primary
+ALTER TABLE xx_form_fields ADD COLUMN id SERIAL PRIMARY KEY;
+
+ALTER TABLE table_days ADD COLUMN id SERIAL PRIMARY KEY;
+
+--
+
+CREATE SEQUENCE xx_form_files_seq START 1;
+-- создаем sequence - начинающийся с 1
+-- nextval('serial_seq'::regclass) - прописываем в default на колонку которую хотим поставить в sequence
+-- https://postgrespro.ru/docs/postgresql/9.6/sql-createsequence
+
+
+-- как дропнуть index в indexes
+ALTER TABLE table_days DROP CONSTRAINT table_days_pkey;
+
+-- test - проверка работы
+select * from table_days;
+
+select text_json from xx_forms xf where form_id = '1'
+
+
+-- изменить владельца таблицы
+ALTER TABLE table_days OWNER TO postgres
+
+
+
+CREATE VIEW good_habbits_v AS
+  SELECT yoga, gym, massage, sex
+  FROM table_days td
+  WHERE price > 200;
+
+
+
+CREATE VIEW good_habbits_v AS
+  SELECT yoga, gym, massage, sex, date
+  FROM table_days td;
+  
+ 
+ 
+ ALTER TABLE xx_forms 
+ADD COLUMN isview VARCHAR;
+
+
+ALTER TABLE public.xx_forms  ADD test varchar NULL;
+
+UPDATE xx_forms  SET text_json  ='newVdfgdfalue' where form_id = '1';
+
+
+
+select table_name FROM xx_forms where form_id = 1
+
+select isview, table_name FROM xx_forms where form_id = 1
