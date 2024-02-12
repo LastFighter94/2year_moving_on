@@ -103,7 +103,7 @@ php artisan make:controller ListingController
 
 
 
-
+php artisan serve --port=8080 - start project
 
 ***********************************************
 ***********************************************
