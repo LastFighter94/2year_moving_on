@@ -1,0 +1,27 @@
+Поставили в desktop в папке basic проект
+composer create-project --prefer-dist yiisoft/yii2-app-basic basic
+
+php yii serve
+
+php yii serve --port=8888
+
+Запустили проект
+
+
+
+Изменение базового шаблона
+1 способ - глобально
+добавить ключ layout в config/web
+'layout' => 'basic'
+// если basic находится в папке views/layout
+
+Можно делать так чтобы для одних страниц был один шаблон, а для других - другой соответственно
+
+- просто переписываем в контроллере публичное свойство следующим образом
+public $layout = 'basic';
+
+- если нужно конкретно к отдельному actiob в контроллере это сделать - то способ ниже
+$this->layout = 'basic';
+
+Поиск по классам и свойствам и прочим моментам framework
+https://www.yiiframework.com/doc/api/2.0
