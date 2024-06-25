@@ -23,3 +23,12 @@ setTimeout(() => {
 }, 0)
 
 Последовательность вывода в консоль какая будет?
+
+1
+Promise
+4
+timeout
+777
+then 1
+then 2
+timeout2

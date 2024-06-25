@@ -1,0 +1,10 @@
+https://www.youtube.com/watch?v=Vom1FEVuDrM&t=3929s
+
+Для sass - life-hack
+
+Для компиляции (глобальная установка)
+npm i -g sass
+потом
+sass --watch filepath/file.scss output_filepath/file.css
+например
+sass --watch scss/style.scss css/style.css

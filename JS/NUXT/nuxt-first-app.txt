@@ -1,6 +1,6 @@
 https://www.youtube.com/watch?v=thHPEotZVdA&list=PL4cUxeGkcC9haQlqdCQyYmL_27TesCGPC&index=2
 
-Nix nuxi init nuxt-app 
+npx nuxi init nuxt-app 
 (Init next app)
 
 Npm I 
